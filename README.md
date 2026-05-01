@@ -16,7 +16,35 @@ Sistem keamanan akses terminal berbasis shell yang dirancang untuk memberikan la
 
 Ikuti langkah-langkah di bawah ini untuk pemasangan di Termux atau Linux:
 
-1. **Clone Repository:**
+1. **Clone:**
    ```bash
-   git clone [https://github.com/USERNAME-ANDA/terminal-gatekeeper.git](https://github.com/USERNAME-ANDA/terminal-gatekeeper.git)
-   cd terminal-gatekeeper
+   git clone https://github.com/123tool/Termux-Login-V1.git
+   cd Termux-Login-V1
+2. **Eksekusi**
+   ```
+   chmod +x login.sh
+3. **Terminal**
+   ```
+   echo "bash $HOME/terminal-gatekeeper/login.sh" >> ~/.bashrc
+
+## Penggunaan
+
+1. Registrasi Akun
+​Saat pertama kali dijalankan, sistem akan meminta Anda membuat Username, Password, dan Security Key. Pastikan Security Key disimpan di tempat yang aman untuk kebutuhan pemulihan
+
+2. Menu Utama ​Sistem menyediakan tiga opsi navigasi :
+​- Login : Masuk ke sesi terminal menggunakan kredensial Anda.
+- Forgot : Memulihkan username/password menggunakan Security Key.
+- Remove : Menghapus seluruh sistem kunci dari terminal Anda (membutuhkan password admin).
+
+## ​🛡️ Catatan Keamanan
+
+​Data otentikasi disimpan di file $HOME/.vault_db. Untuk perlindungan ekstra, sangat disarankan untuk mengatur izin akses file tersebut menjadi privat :
+```
+chmod 600 ~/.vault_db
+```
+
+
+## ⚠️ Disclaimer
+
+**​Untuk tujuan keamanan terminal. Segala bentuk kehilangan akses akibat melupakan Password dan Security Key secara bersamaan berada di luar tanggung jawab pengembang.**
